@@ -343,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 944339926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.97, z: 0}
+  m_LocalPosition: {x: 0, y: 2.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -415,7 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe5eea5692a13947878b66b6a886fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedMovement: 1
+  _speedMovement: 5
+  _gravity: 5
 --- !u!114 &944339934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +468,19 @@ MonoBehaviour:
     m_ActionId: 351ed5f4-60a3-4e82-ad2d-5d0baa123729
     m_ActionName: Game/Grapnel[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: fc6d8fbbe42f3654093caae6552a5149, type: 2}
+        m_TargetAssemblyTypeName: InputEventVector2, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0ef4a9b4-829d-491a-adba-05d2cab145c6
     m_ActionName: Game/Camera[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
@@ -487,6 +500,8 @@ GameObject:
   - component: {fileID: 1142188721}
   - component: {fileID: 1142188720}
   - component: {fileID: 1142188723}
+  - component: {fileID: 1142188724}
+  - component: {fileID: 1142188725}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -612,6 +627,49 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1142188724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142188719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59341a678e1ef284ab71b7ab15d43b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementController: {fileID: 944339933}
+  _cameraClamp: 100
+  _sensibility: 0.5
+--- !u!114 &1142188725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142188719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e95dc2d0b842d54da53df200242ff19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputEventVector2: {fileID: 11400000, guid: fc6d8fbbe42f3654093caae6552a5149, type: 2}
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1142188724}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: SetAxisMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2085000473
 GameObject:
   m_ObjectHideFlags: 0
