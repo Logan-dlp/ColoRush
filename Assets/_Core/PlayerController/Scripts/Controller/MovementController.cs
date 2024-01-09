@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
     private Vector3 _axisMovement = Vector3.zero;
     
     [SerializeField] private float _speedMovement = 5;
+    [SerializeField] private float _gravity = 5;
 
     private void Awake()
     {
@@ -16,11 +17,18 @@ public class MovementController : MonoBehaviour
 
     private void LateUpdate()
     {
-        _characterController.Move(_axisMovement * Time.deltaTime * _speedMovement);
+        // Gravity.
+        if (!_characterController.isGrounded)
+        {
+            _characterController.Move(-transform.up * _gravity * Time.deltaTime);
+        }
+        
+        _characterController.Move(transform.forward * _axisMovement.y * _speedMovement * Time.deltaTime);
+        _characterController.Move(transform.right * _axisMovement.x * _speedMovement * Time.deltaTime);
     }
 
     public void SetAxisMovement(Vector2 axis)
     {
-        _axisMovement = new Vector3(axis.x, 0, axis.y);
+        _axisMovement = axis;
     }
 }
