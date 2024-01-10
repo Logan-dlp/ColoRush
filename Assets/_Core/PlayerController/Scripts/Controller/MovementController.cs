@@ -5,29 +5,47 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     private CharacterController _characterController;
+    
     private Vector3 _axisMovement = Vector3.zero;
+    private Vector3 _characterVelocity;
+    
+    private float _gravity = -9.81f;
+    private bool _isGrounded = false;
 
     [SerializeField] private float _speedMovement = 5;
-    [SerializeField] private float _jumpForce = 10;
-    [SerializeField] private float _gravity = 5;
+    [SerializeField] private float _jumpForce = 1;
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        _characterController.Move(-transform.up * _gravity * Time.deltaTime);
-        _characterController.Move(transform.forward * _axisMovement.y * _speedMovement * Time.deltaTime);
-        _characterController.Move(transform.right * _axisMovement.x * _speedMovement * Time.deltaTime);
+        _isGrounded = _characterController.isGrounded;
+        if (_isGrounded && _characterVelocity.y < 0)
+        {
+            _characterVelocity.y = 0f;
+        }
         
-        Debug.Log(_characterController.velocity.y);
+        Vector3 move = transform.forward * _axisMovement.y + transform.right * _axisMovement.x;
+        _characterController.Move(move * _speedMovement * Time.fixedDeltaTime);
+
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+
+        _characterVelocity.y += _gravity * Time.fixedDeltaTime;
+        _characterController.Move(_characterVelocity * Time.fixedDeltaTime);
     }
 
     public void Jump()
     {
-        _characterController.Move(transform.up * _jumpForce * Time.deltaTime * .5f);
+        if (_characterController.isGrounded)
+        {
+            _characterVelocity.y += Mathf.Sqrt(_jumpForce * -3.0f * _gravity);
+        }
     }
 
     public void SetAxisMovement(Vector2 axis)
