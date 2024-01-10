@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da16fe57de304834b88519acfd2759a2, type: 3}
-  m_Name: PlayerMovementEvent
+  m_Name: MovementEvent
   m_EditorClassIdentifier: 
