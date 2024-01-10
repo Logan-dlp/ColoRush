@@ -681,6 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementController: {fileID: 944339933}
+  _cameraPosition: {x: 0, y: 0.5, z: 0}
   _cameraClamp: 100
   _sensibility: 0.5
 --- !u!114 &1142188725

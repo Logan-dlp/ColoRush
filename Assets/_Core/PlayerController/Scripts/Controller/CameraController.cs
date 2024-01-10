@@ -9,13 +9,14 @@ public class CameraController : MonoBehaviour
     
     [SerializeField] private MovementController _movementController;
     
+    [SerializeField] private Vector3 _cameraPosition;
     [SerializeField] private float _cameraClamp;
     [SerializeField] private float _sensibility;
 
     private void LateUpdate()
     {
         // The camera takes the position of the movement, and the movement takes the rotation of the camera.
-        transform.position = _movementController.transform.position;
+        transform.position = _movementController.transform.position + _cameraPosition;
 
         _rotationY -= _axisMovement.x * _sensibility;
         _rotationX += _axisMovement.y * _sensibility;
