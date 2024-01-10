@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // The camera takes the position of the movement, and the movement takes the rotation of the camera.
+        // The camera takes the position of the movement, and the movement takes the rotation Y of the camera.
         transform.position = _movementController.transform.position + _cameraPosition;
 
         _rotationY -= _axisMovement.x * _sensibility;
