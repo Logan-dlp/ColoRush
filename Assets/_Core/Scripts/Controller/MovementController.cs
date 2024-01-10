@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     
     private float _gravity = -9.81f;
     private bool _isGrounded = false;
+    public bool IsLocked { get; set; }
 
     [SerializeField] private float _speedMovement = 5;
     [SerializeField] private float _jumpForce = 1;
@@ -22,6 +23,9 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (IsLocked) 
+            return;
+        
         _isGrounded = _characterController.isGrounded;
         if (_isGrounded && _characterVelocity.y < 0)
         {
@@ -42,6 +46,9 @@ public class MovementController : MonoBehaviour
 
     public void Jump()
     {
+        if (IsLocked)
+            return;
+        
         if (_characterController.isGrounded)
         {
             _characterVelocity.y += Mathf.Sqrt(_jumpForce * -3.0f * _gravity);
