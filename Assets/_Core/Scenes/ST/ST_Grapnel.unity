@@ -1246,6 +1246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grapnelSpeed: 1
+  _cooldownSpeed: 10
   _distanceStopGrap: 3
   _distanceToRay: 100
   _layerMaskToGrape:

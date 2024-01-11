@@ -9,6 +9,7 @@ using UnityEngine;
 public class GrapnelController : MonoBehaviour
 {
     [SerializeField] private float _grapnelSpeed = 1;
+    [SerializeField] private float _cooldownSpeed = 1;
     [SerializeField] private float _distanceStopGrap = 3;
     [SerializeField] private int _distanceToRay = 100;
     [SerializeField] private LayerMask _layerMaskToGrape;
@@ -23,6 +24,7 @@ public class GrapnelController : MonoBehaviour
     private Vector3[] _linePosition = new Vector3[2];
     
     private float _timeLerp;
+    private float _cooldownToActivate = 100;
     private bool _goToHitpoint;
     
     private void Awake()
@@ -51,6 +53,11 @@ public class GrapnelController : MonoBehaviour
             _lineRenderer.SetPositions(_linePosition);
         }
 
+        if (!_goToHitpoint && _cooldownToActivate < 100)
+        {
+            _cooldownToActivate += Time.deltaTime * _cooldownSpeed;
+        }
+
         if (Vector3.Distance(transform.position, _hitPoint) < _distanceStopGrap)
         {
             StopGrap();
@@ -61,10 +68,14 @@ public class GrapnelController : MonoBehaviour
     {
         if (Physics.Raycast(_startPoint.position, _startPoint.forward, out RaycastHit hit, _distanceToRay, _layerMaskToGrape))
         {
-            _hitPoint = hit.point;
-            _characterPosition = transform.position;
-            _goToHitpoint = true;
-            _movementController.IsLocked = true;
+            if (_cooldownToActivate >= 100)
+            {
+                _hitPoint = hit.point;
+                _characterPosition = transform.position;
+                _goToHitpoint = true;
+                _movementController.IsLocked = true;
+                _cooldownToActivate = 0;
+            }
         }
     }
 
