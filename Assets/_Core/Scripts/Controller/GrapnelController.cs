@@ -4,7 +4,8 @@ using UnityEngine;
 
 [RequireComponent(
     typeof(CharacterController), 
-    typeof(MovementController))]
+    typeof(MovementController),
+    typeof(LineRenderer))]
 public class GrapnelController : MonoBehaviour
 {
     [SerializeField] private float _grapnelSpeed = 1;
@@ -13,10 +14,12 @@ public class GrapnelController : MonoBehaviour
     
     private CharacterController _characterController;
     private MovementController _movementController;
+    private LineRenderer _lineRenderer;
     private Transform _startPoint;
     
     private Vector3 _characterPosition;
     private Vector3 _hitPoint;
+    private Vector3[] _linePosition = new Vector3[2];
     
     private float _timeLerp;
     private bool _goToHitpoint;
@@ -26,6 +29,10 @@ public class GrapnelController : MonoBehaviour
         _movementController = GetComponent<MovementController>();
         _characterController = GetComponent<CharacterController>();
         _startPoint = GetComponentInChildren<Camera>().transform;
+        
+        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        _lineRenderer.alignment = LineAlignment.View;
 
         // a enlever
         Cursor.lockState = CursorLockMode.Locked;
@@ -37,6 +44,10 @@ public class GrapnelController : MonoBehaviour
         {
             _timeLerp += Time.deltaTime * _grapnelSpeed;
             transform.position = Vector3.Lerp(_characterPosition, _hitPoint, Mathf.Clamp01(_timeLerp));
+            
+            _linePosition[0] = transform.position;
+            _linePosition[1] = _hitPoint;
+            _lineRenderer.SetPositions(_linePosition);
         }
 
         if (Vector3.Distance(transform.position, _hitPoint) < _distanceStopGrap)
@@ -63,6 +74,9 @@ public class GrapnelController : MonoBehaviour
             _goToHitpoint = false;
             _movementController.IsLocked = false;
             _timeLerp = 0;
+
+            _linePosition[0] = _linePosition[1];
+            _lineRenderer.SetPositions(_linePosition);
         }
     }
 }
