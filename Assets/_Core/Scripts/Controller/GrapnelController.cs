@@ -11,6 +11,7 @@ public class GrapnelController : MonoBehaviour
     [SerializeField] private float _grapnelSpeed = 1;
     [SerializeField] private float _distanceStopGrap = 3;
     [SerializeField] private int _distanceToRay = 100;
+    [SerializeField] private LayerMask _layerMaskToGrape;
     
     private CharacterController _characterController;
     private MovementController _movementController;
@@ -58,7 +59,7 @@ public class GrapnelController : MonoBehaviour
 
     public void Grap()
     {
-        if (Physics.Raycast(_startPoint.position, _startPoint.forward, out RaycastHit hit, _distanceToRay))
+        if (Physics.Raycast(_startPoint.position, _startPoint.forward, out RaycastHit hit, _distanceToRay, _layerMaskToGrape))
         {
             _hitPoint = hit.point;
             _characterPosition = transform.position;

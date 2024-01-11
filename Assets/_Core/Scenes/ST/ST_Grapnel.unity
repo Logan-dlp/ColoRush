@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 1746459708}
   - component: {fileID: 1746459707}
   - component: {fileID: 1746459706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,6 +1248,9 @@ MonoBehaviour:
   _grapnelSpeed: 1
   _distanceStopGrap: 3
   _distanceToRay: 100
+  _layerMaskToGrape:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!120 &2089209478
 LineRenderer:
   serializedVersion: 2
