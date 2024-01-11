@@ -8,6 +8,7 @@ using UnityEngine;
 public class GrapnelController : MonoBehaviour
 {
     [SerializeField] private float _grapnelSpeed = 1;
+    [SerializeField] private float _distanceStopGrap = 3;
     [SerializeField] private int _distanceToRay = 100;
     
     private CharacterController _characterController;
@@ -38,11 +39,9 @@ public class GrapnelController : MonoBehaviour
             transform.position = Vector3.Lerp(_characterPosition, _hitPoint, Mathf.Clamp01(_timeLerp));
         }
 
-        if (Vector3.Distance(transform.position, _hitPoint) < 3)
+        if (Vector3.Distance(transform.position, _hitPoint) < _distanceStopGrap)
         {
-            _goToHitpoint = false;
-            _movementController.IsLocked = false;
-            _timeLerp = 0;
+            StopGrap();
         }
     }
 
@@ -54,6 +53,16 @@ public class GrapnelController : MonoBehaviour
             _characterPosition = transform.position;
             _goToHitpoint = true;
             _movementController.IsLocked = true;
+        }
+    }
+
+    public void StopGrap()
+    {
+        if (_goToHitpoint)
+        {
+            _goToHitpoint = false;
+            _movementController.IsLocked = false;
+            _timeLerp = 0;
         }
     }
 }
