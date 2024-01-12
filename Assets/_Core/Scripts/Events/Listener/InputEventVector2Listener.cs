@@ -4,12 +4,12 @@ using UnityEngine.Events;
 
 public class InputEventVector2Listener : MonoBehaviour
 {
-    [SerializeField] private InputEventVector2 inputEventVector2;
+    [SerializeField] private InputEventVector2 _inputEventVector2;
     [SerializeField] private UnityEvent<Vector2> _callbacks;
 
     private void OnEnable()
     {
-        inputEventVector2.MouvementEvent += InvokeEvent;
+        _inputEventVector2.Vector2Action += InvokeEvent;
     }
 
     public void InvokeEvent(Vector2 axis)

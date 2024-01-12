@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Core/Scenes/ST/ST_Grapnel.unity
-    guid: 170123d089a583747bbca0151c0a3a96
+    path: Assets/_Core/Scenes/ST/ST_SettingsUI.unity
+    guid: 54a4338bede656a48a136b059fc9caa4
   m_configObjects: {}
