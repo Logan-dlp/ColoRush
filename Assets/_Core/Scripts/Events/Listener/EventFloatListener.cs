@@ -6,6 +6,7 @@ public class EventFloatListener : MonoBehaviour
 {
     [SerializeField] private EventFloat _eventFloat;
     [SerializeField] private UnityEvent<float> _callbacks;
+    [SerializeField] private string _playerPrefName;
 
     private void OnEnable()
     {
@@ -15,5 +16,7 @@ public class EventFloatListener : MonoBehaviour
     public void InvokeEvent(float number)
     {
         _callbacks?.Invoke(number);
+        PlayerPrefs.SetFloat(_playerPrefName, number);
+        PlayerPrefs.Save();
     }
 }

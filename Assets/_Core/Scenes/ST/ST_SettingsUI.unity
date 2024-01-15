@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 358180885}
   - component: {fileID: 358180884}
   - component: {fileID: 358180888}
-  - component: {fileID: 358180887}
+  - component: {fileID: 358180889}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -217,20 +217,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &358180887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358180883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59341a678e1ef284ab71b7ab15d43b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cameraClamp: 100
-  _sensibility: 100
 --- !u!114 &358180888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +261,20 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &358180889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358180883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259d4c92e936f04c82e03c500bd424a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+  _playerPrefName: Sound
 --- !u!1 &518350821
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818541156}
   - component: {fileID: 818541157}
+  - component: {fileID: 818541158}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -627,6 +628,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &818541158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818541155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c81b76d1a617d84988b81f55848e128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 818541157}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _playerPrefName: Sound
 --- !u!1 &875587230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1288,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _playerPrefName: Sound
 --- !u!82 &1939973194
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1270,7 +1301,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
