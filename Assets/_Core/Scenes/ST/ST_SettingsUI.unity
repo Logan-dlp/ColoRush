@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
   _playerPrefName: Sound
+  _defaltValue: 1
 --- !u!1 &518350821
 GameObject:
   m_ObjectHideFlags: 0
