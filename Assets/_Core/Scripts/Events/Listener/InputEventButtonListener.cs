@@ -9,12 +9,12 @@ public class InputEventButtonListener : MonoBehaviour
     
     private void OnEnable()
     {
-        _inputEventButton.InputAction += InvokeEvent;
+        _inputEventButton.Action += InvokeEvent;
     }
 
     private void OnDisable()
     {
-        _inputEventButton.InputAction -= InvokeEvent;
+        _inputEventButton.Action -= InvokeEvent;
     }
 
     public void InvokeEvent()

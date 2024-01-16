@@ -36,9 +36,6 @@ public class GrapnelController : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         _lineRenderer.alignment = LineAlignment.View;
-
-        // a enlever
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
