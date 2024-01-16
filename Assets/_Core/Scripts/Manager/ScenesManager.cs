@@ -10,6 +10,7 @@ public class ScenesManager : MonoBehaviour
 
     public void Quit()
     {
+        PlayerPrefs.Save();
         Application.Quit();
     }
 }

@@ -7,7 +7,7 @@ public class ScreenManager : MonoBehaviour
     [SerializeField] private FullScreenMode _fullScreenMode;
     [SerializeField] private CursorLockMode _cursorLockMode;
 
-    private void Start()
+    private void Awake()
     {
         UpdateResolutionScreen(_screenResolution);
         UpdateCusorLockedMode(_cursorLockMode);

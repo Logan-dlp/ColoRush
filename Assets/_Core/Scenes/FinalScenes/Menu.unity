@@ -397,9 +397,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 388738725}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 388738728}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -504,7 +504,7 @@ RectTransform:
   m_Father: {fileID: 1489986591}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -732,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &388738726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +780,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388738725}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -1149,9 +1149,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 388738725}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 388738728}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1961,6 +1961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484101038}
   - component: {fileID: 1484101039}
+  - component: {fileID: 1484101040}
   m_Layer: 5
   m_Name: Sensibility
   m_TagString: Untagged
@@ -2037,10 +2038,51 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: cded670d2f0e4af4f8964e486b20bdef, type: 2}
+        m_TargetAssemblyTypeName: EventFloat, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1484101040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484101037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c81b76d1a617d84988b81f55848e128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: cded670d2f0e4af4f8964e486b20bdef, type: 2}
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1484101039}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  _playerPrefName: Sensibility
 --- !u!1 &1489986590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2440,7 @@ GameObject:
   - component: {fileID: 1743999140}
   - component: {fileID: 1743999142}
   - component: {fileID: 1743999143}
+  - component: {fileID: 1743999144}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2641,6 +2684,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d991575f9e42964f8920fd8946551cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1743999144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743999136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259d4c92e936f04c82e03c500bd424a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+  _playerPrefName: Sound
+  _defaltValue: 1
 --- !u!1 &1815042755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2978,7 @@ RectTransform:
   m_Father: {fileID: 390282418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2949,7 +3007,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 0.3
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3165,7 +3223,7 @@ RectTransform:
   m_Father: {fileID: 1595690556895412696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3224,10 +3282,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.552
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+        m_TargetAssemblyTypeName: EventFloat, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1595690556895412696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3271,7 +3341,7 @@ RectTransform:
   m_Father: {fileID: 7241758537965195591}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3399,7 +3469,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 0.552
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3456,6 +3526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6703610826963380995}
   - component: {fileID: 1238711582471190208}
+  - component: {fileID: 7599538006532100805}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -3463,6 +3534,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7599538006532100805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7599538006532100804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c81b76d1a617d84988b81f55848e128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1238711582471190208}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: SetValueWithoutNotify
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _playerPrefName: Sound
 --- !u!114 &7846940634131823700
 MonoBehaviour:
   m_ObjectHideFlags: 0
