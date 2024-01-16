@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _screenResolution: {x: 1920, y: 1080}
-  _fullScreenMode: 2
+  _fullScreenMode: 0
   _cursorLockMode: 0
 --- !u!114 &1743999143
 MonoBehaviour:
