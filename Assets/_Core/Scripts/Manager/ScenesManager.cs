@@ -8,6 +8,8 @@ public class ScenesManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+        
         if (_sceneLoadInStart.Length > 0)
         {
             foreach (string name in _sceneLoadInStart)
