@@ -143,7 +143,7 @@
                 {
                     "name": "",
                     "id": "4fcae0bd-e17b-4449-aaf0-f29a2a061930",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -243,6 +243,15 @@
                     "type": "PassThrough",
                     "id": "8b83500a-c051-474f-9887-b76cd3a346c6",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "0c738dfe-c1c7-49bd-9042-43111a421494",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -664,6 +673,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e0f4298-3d85-47ac-afb1-67fba130e46a",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
