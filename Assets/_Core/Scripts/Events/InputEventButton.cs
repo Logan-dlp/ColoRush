@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InputEventButton : ScriptableObject
 {
     public Action Action;
+    private bool isActive;
 
     public void InvokeEvent(InputAction.CallbackContext _ctx)
     {

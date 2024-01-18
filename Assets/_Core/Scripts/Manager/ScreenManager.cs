@@ -5,12 +5,12 @@ public class ScreenManager : MonoBehaviour
 {
     [SerializeField] private Vector2 _screenResolution;
     [SerializeField] private FullScreenMode _fullScreenMode;
-    [SerializeField] private CursorLockMode _cursorLockMode;
+    [SerializeField] private bool _cursorIsLocked;
 
     private void Awake()
     {
         UpdateResolutionScreen(_screenResolution);
-        UpdateCusorLockedMode(_cursorLockMode);
+        UpdateCusorLockedMode(_cursorIsLocked);
     }
 
     public void UpdateResolutionScreen(Vector2 newResolution)
@@ -18,8 +18,15 @@ public class ScreenManager : MonoBehaviour
         Screen.SetResolution((int)_screenResolution.x, (int)_screenResolution.y, _fullScreenMode);
     }
 
-    public void UpdateCusorLockedMode(CursorLockMode cursorLockMode)
+    public void UpdateCusorLockedMode(bool isLocked)
     {
-        Cursor.lockState = cursorLockMode;
+        if (isLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }

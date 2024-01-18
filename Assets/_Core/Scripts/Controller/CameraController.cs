@@ -8,13 +8,13 @@ public class CameraController : MonoBehaviour
     private float _rotationX;
     
     [SerializeField] private float _cameraClamp;
-    [SerializeField] private float _sensibility;
+    public float Sensibility { get; set; }
 
     private void Update()
     {
         // The camera takes the position of the movement, and the movement takes the rotation Y of the camera.
-        _rotationY -= _axisMovement.x * _sensibility;
-        _rotationX += _axisMovement.y * _sensibility;
+        _rotationY -= _axisMovement.x * Sensibility;
+        _rotationX += _axisMovement.y * Sensibility;
 
         _rotationX = Mathf.Clamp(_rotationX, -_cameraClamp, _cameraClamp);
         
