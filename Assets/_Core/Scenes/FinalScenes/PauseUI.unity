@@ -887,6 +887,8 @@ GameObject:
   - component: {fileID: 1223093209}
   - component: {fileID: 1223093213}
   - component: {fileID: 1223093214}
+  - component: {fileID: 1223093216}
+  - component: {fileID: 1223093215}
   m_Layer: 5
   m_Name: CanvasSettings
   m_TagString: Untagged
@@ -991,6 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d991575f9e42964f8920fd8946551cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneLoadInStart: []
 --- !u!114 &1223093214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,6 +1022,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1223093215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223093208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259d4c92e936f04c82e03c500bd424a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: cded670d2f0e4af4f8964e486b20bdef, type: 2}
+  _playerPrefName: Sensibility
+  _defaltValue: 0.3
+--- !u!114 &1223093216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223093208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259d4c92e936f04c82e03c500bd424a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+  _playerPrefName: Sound
+  _defaltValue: 1
 --- !u!1 &1251665707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1226,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.22222224
+  m_FillAmount: 0.2929293
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1357,7 +1390,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1576773249}
   m_HandleRect: {fileID: 1251665708}
   m_Direction: 0
-  m_MinValue: 0.1
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.3

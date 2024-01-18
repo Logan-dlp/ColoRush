@@ -235,6 +235,8 @@ GameObject:
   m_Component:
   - component: {fileID: 114010072}
   - component: {fileID: 114010073}
+  - component: {fileID: 114010075}
+  - component: {fileID: 114010074}
   m_Layer: 0
   m_Name: Unity
   m_TagString: Untagged
@@ -272,6 +274,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneLoadInStart:
   - PauseUI
+--- !u!114 &114010074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114010071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259d4c92e936f04c82e03c500bd424a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: cded670d2f0e4af4f8964e486b20bdef, type: 2}
+  _playerPrefName: Sensibility
+  _defaltValue: 0.3
+--- !u!114 &114010075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114010071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259d4c92e936f04c82e03c500bd424a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: 8be14ee13c666f74e86aaede02c50ddd, type: 2}
+  _playerPrefName: Sound
+  _defaltValue: 1
 --- !u!1 &895807376
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +724,7 @@ GameObject:
   - component: {fileID: 2001376254}
   - component: {fileID: 2001376255}
   - component: {fileID: 2001376256}
+  - component: {fileID: 2001376257}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -902,6 +935,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2001376257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001376248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c81b76d1a617d84988b81f55848e128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventFloat: {fileID: 11400000, guid: cded670d2f0e4af4f8964e486b20bdef, type: 2}
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2001376253}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: set_Sensibility
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _playerPrefName: Sensibility
 --- !u!1 &2089209466
 GameObject:
   m_ObjectHideFlags: 0
