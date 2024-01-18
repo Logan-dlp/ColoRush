@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(
     typeof(CharacterController), 
@@ -13,6 +14,7 @@ public class GrapnelController : MonoBehaviour
     [SerializeField] private float _distanceStopGrap = 3;
     [SerializeField] private int _distanceToRay = 100;
     [SerializeField] private LayerMask _layerMaskToGrape;
+    [SerializeField] private UnityEvent<bool> _callbaks;
     
     private CharacterController _characterController;
     private MovementController _movementController;
@@ -59,6 +61,11 @@ public class GrapnelController : MonoBehaviour
         {
             StopGrap();
         }
+
+        if (_cooldownToActivate >= 100)
+        {
+            _callbaks?.Invoke(true);
+        }
     }
 
     public void Grap()
@@ -72,6 +79,8 @@ public class GrapnelController : MonoBehaviour
                 _goToHitpoint = true;
                 _movementController.IsLocked = true;
                 _cooldownToActivate = 0;
+                
+                _callbaks?.Invoke(false);
             }
         }
     }
