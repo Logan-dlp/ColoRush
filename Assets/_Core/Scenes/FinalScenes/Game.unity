@@ -2706,6 +2706,7 @@ Transform:
   - {fileID: 406503786464390986}
   - {fileID: 2744805576737298382}
   - {fileID: 4601573202565323953}
+  - {fileID: 928887010232380763}
   m_Father: {fileID: 331887903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859737068
@@ -5456,6 +5457,7 @@ GameObject:
   - component: {fileID: 2076009232}
   - component: {fileID: 2076009231}
   - component: {fileID: 2076009234}
+  - component: {fileID: 2076009235}
   m_Layer: 0
   m_Name: Unity
   m_TagString: Untagged
@@ -5536,6 +5538,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b311a666efc54c489a59fd6e5c0cc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 48ea804cc75d75d439fe4215f4b6471b, type: 2}
+        m_TargetAssemblyTypeName: EventFloat, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2076009235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076009229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ee5b49bca073e46bab7623b972daf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventMessage: {fileID: 11400000, guid: 46f3d95e42592e644a7fa91ef757c207, type: 2}
+  _callcaks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076009234}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: StopTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Endgame
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2076009233}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Endgame
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2076266442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6555,6 +6612,7 @@ GameObject:
   - component: {fileID: 8390135756850342333}
   - component: {fileID: 5321120492182928871}
   - component: {fileID: 7497341614533665840}
+  - component: {fileID: 8390135756850342334}
   m_Layer: 0
   m_Name: Club d_escalade
   m_TagString: Untagged
@@ -8871,11 +8929,11 @@ Transform:
   m_GameObject: {fileID: 553874021332056033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
-  m_LocalPosition: {x: -27.59, y: 7.72, z: 133.559}
+  m_LocalPosition: {x: -13.97, y: 5.862662, z: 27.989006}
   m_LocalScale: {x: 2.4672, y: 2.4672, z: 2.4672}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 813043052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &968425101105705028
 GameObject:
@@ -27336,6 +27394,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524476777322093975}
   m_Mesh: {fileID: 5250775650629891672, guid: 844c6c59ddef5b34d81114d60e36c332, type: 3}
+--- !u!114 &8390135756850342334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524476777322093975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8709bf31841c04e46b4d1d79ee33389d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _callbaks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 46f3d95e42592e644a7fa91ef757c207, type: 2}
+        m_TargetAssemblyTypeName: EventMessage, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8479348673257093369
 GameObject:
   m_ObjectHideFlags: 0
@@ -29757,4 +29842,3 @@ SceneRoots:
   - {fileID: 1404723069}
   - {fileID: 1986210195}
   - {fileID: 7864705582194449233}
-  - {fileID: 928887010232380763}
