@@ -1,21 +1,26 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(
     typeof(CharacterController), 
     typeof(MovementController),
     typeof(LineRenderer))]
+[RequireComponent(typeof(Animator))]
 public class GrapnelController : MonoBehaviour
 {
     [SerializeField] private float _grapnelSpeed = 1;
     [SerializeField] private float _cooldownSpeed = 1;
     [SerializeField] private float _distanceStopGrap = 3;
     [SerializeField] private int _distanceToRay = 100;
+    [SerializeField] private Transform _lineStart;
     [SerializeField] private LayerMask _layerMaskToGrape;
+    [SerializeField] private UnityEvent<bool> _callbaks;
     
     private CharacterController _characterController;
     private MovementController _movementController;
+    private Animator _animator;
     private LineRenderer _lineRenderer;
     private Transform _startPoint;
     
@@ -36,6 +41,8 @@ public class GrapnelController : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         _lineRenderer.alignment = LineAlignment.View;
+
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -45,7 +52,7 @@ public class GrapnelController : MonoBehaviour
             _timeLerp += Time.deltaTime * _grapnelSpeed;
             transform.position = Vector3.Lerp(_characterPosition, _hitPoint, Mathf.Clamp01(_timeLerp));
             
-            _linePosition[0] = transform.position;
+            _linePosition[0] = _lineStart.position;
             _linePosition[1] = _hitPoint;
             _lineRenderer.SetPositions(_linePosition);
         }
@@ -58,6 +65,11 @@ public class GrapnelController : MonoBehaviour
         if (Vector3.Distance(transform.position, _hitPoint) < _distanceStopGrap)
         {
             StopGrap();
+        }
+
+        if (_cooldownToActivate >= 100)
+        {
+            _callbaks?.Invoke(true);
         }
     }
 
@@ -72,6 +84,10 @@ public class GrapnelController : MonoBehaviour
                 _goToHitpoint = true;
                 _movementController.IsLocked = true;
                 _cooldownToActivate = 0;
+                
+                _callbaks?.Invoke(false);
+                
+                _animator.SetBool("GrapnelActive", true);
             }
         }
     }
@@ -86,6 +102,8 @@ public class GrapnelController : MonoBehaviour
 
             _linePosition[0] = _linePosition[1];
             _lineRenderer.SetPositions(_linePosition);
+            
+            _animator.SetBool("GrapnelActive", false);
         }
     }
 }
