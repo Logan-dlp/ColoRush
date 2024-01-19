@@ -25915,10 +25915,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7889ccfd1bbafc4b8cc0a5eabfcdaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grapnelSpeed: 1.5
-  _cooldownSpeed: 8
+  _grapnelSpeed: 1
+  _cooldownSpeed: 30
   _distanceStopGrap: 0.5
-  _distanceToRay: 10
+  _distanceToRay: 20
+  _lineStart: {fileID: 3656487596996698355}
   _layerMaskToGrape:
     serializedVersion: 2
     m_Bits: 64
@@ -26140,7 +26141,7 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 4
-    textureScale: {x: 1, y: 1}
+    textureScale: {x: 0.5, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
