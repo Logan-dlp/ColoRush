@@ -109,8 +109,30 @@
                 },
                 {
                     "name": "",
+                    "id": "69f587d2-5367-4a1a-8de7-31ca79f45e9d",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f1b5f510-d939-492b-ad92-8779b8c1c771",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "603918b9-f4e1-4b4f-84a5-31e9d7d0c52d",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -131,6 +153,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f85f71eb-6a67-49f7-9a16-b2ec353d764f",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grapnel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f3e14591-19b0-40d1-a8c4-5249e60e016c",
                     "path": "<Mouse>/delta",
                     "interactions": "",
@@ -142,8 +175,30 @@
                 },
                 {
                     "name": "",
+                    "id": "16e123da-f9e6-4542-8b27-680431147d8c",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4fcae0bd-e17b-4449-aaf0-f29a2a061930",
                     "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f8ed543-c246-4510-a521-38ee65fde3ae",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
