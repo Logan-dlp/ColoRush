@@ -1661,8 +1661,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413165713}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0.1}
+  m_LocalRotation: {x: -0.0000037550926, y: -0.00000008940697, z: 0.00000023841858,
+    w: 1}
+  m_LocalPosition: {x: -0.0030765533, y: 1.626, z: 0.193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24747,6 +24748,7 @@ GameObject:
   - component: {fileID: 7864705582194449242}
   - component: {fileID: 7864705582194449241}
   - component: {fileID: 7864705582194449244}
+  - component: {fileID: 7864705582194449245}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -26015,6 +26017,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7864705582194449245}
+        m_TargetAssemblyTypeName: AnimationController, Assembly-CSharp
+        m_MethodName: set_Axis
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7864705582194449238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26461,6 +26475,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7864705582194449245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381079428774429163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585c80470448a8443a15b649640b2465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7866181333719742903
 GameObject:
   m_ObjectHideFlags: 0
@@ -27445,14 +27471,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9043318043473907718}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000002560619, y: 0.00000014553645, z: -0.00000005215407,
-    w: 1}
+  m_LocalRotation: {x: 0.4475957, y: -0.54741037, z: 0.4475957, w: 0.54741037}
   m_LocalPosition: {x: -0.1404924, y: 0.000000019073486, z: -5.587935e-10}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1665809570244328961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 78.543, y: -90, z: 0}
 --- !u!4 &8540214722237801387
 Transform:
   m_ObjectHideFlags: 0
