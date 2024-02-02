@@ -1646,6 +1646,7 @@ GameObject:
   - component: {fileID: 413165717}
   - component: {fileID: 413165716}
   - component: {fileID: 413165715}
+  - component: {fileID: 413165723}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1885,6 +1886,36 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &413165723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413165713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &548185729
 GameObject:
   m_ObjectHideFlags: 0
@@ -24749,6 +24780,7 @@ GameObject:
   - component: {fileID: 7864705582194449241}
   - component: {fileID: 7864705582194449244}
   - component: {fileID: 7864705582194449245}
+  - component: {fileID: 7864705582194449246}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -26264,30 +26296,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c6118c0e610f38f4586fc52f3cfcc306, type: 2}
-        m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
-        m_MethodName: set_IsTrue
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c6118c0e610f38f4586fc52f3cfcc306, type: 2}
-        m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
-        m_MethodName: InvokeEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: c16a3d65-7871-4ab4-b268-e3a2db214499
     m_ActionName: Game/Pause[/Keyboard/escape]
   - m_PersistentCalls:
@@ -26345,30 +26353,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: a547d05ac59437c4a95946c1a0c66bbd, type: 2}
-        m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
-        m_MethodName: InvokeEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c6118c0e610f38f4586fc52f3cfcc306, type: 2}
-        m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
-        m_MethodName: set_IsTrue
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c6118c0e610f38f4586fc52f3cfcc306, type: 2}
         m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
         m_MethodName: InvokeEvent
         m_Mode: 1
@@ -26488,6 +26472,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585c80470448a8443a15b649640b2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7864705582194449246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381079428774429163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4edfa3b6fb0fd4f897b6bdddebb0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _callbaks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c6118c0e610f38f4586fc52f3cfcc306, type: 2}
+        m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
+        m_MethodName: set_IsTrue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c6118c0e610f38f4586fc52f3cfcc306, type: 2}
+        m_TargetAssemblyTypeName: EventBool, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7866181333719742903
 GameObject:
   m_ObjectHideFlags: 0
