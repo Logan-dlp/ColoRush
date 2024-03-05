@@ -39,7 +39,6 @@ public class GrapnelController : MonoBehaviour
         _startPoint = GetComponentInChildren<Camera>().transform;
         
         _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         _lineRenderer.alignment = LineAlignment.View;
 
         _animator = GetComponent<Animator>();
