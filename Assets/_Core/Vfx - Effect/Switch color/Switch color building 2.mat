@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Mask:
-        m_Texture: {fileID: 2800000, guid: 6b46b9dfd5a7dfe488ca0a9feb0f8d87, type: 3}
+        m_Texture: {fileID: 2800000, guid: 98c12e4ffb8678943989393def440135, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
@@ -49,13 +49,13 @@ Material:
     - _Agitation: 1
     - _Count_Split: 5
     - _Metallic: 0
-    - _On_Off: 0.308
+    - _On_Off: 0.16
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.5
     m_Colors:
-    - _Color: {r: 0, g: 0.9068457, b: 0.53661543, a: 0}
-    - _Color_2: {r: 0.8060851, g: 0, b: 0.4137373, a: 0}
+    - _Color: {r: 0, g: 0.90588236, b: 0.32566097, a: 0}
+    - _Color_2: {r: 0.80784315, g: 0, b: 0.0077469507, a: 0}
     - _Multiply_Color: {r: 2, g: 2, b: 2, a: 2}
     - _Slide_Power: {r: 0.2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
