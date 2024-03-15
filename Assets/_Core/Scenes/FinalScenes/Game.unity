@@ -2679,7 +2679,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2726,7 +2726,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -2741,7 +2741,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -22061,6 +22061,8 @@ GameObject:
   - component: {fileID: 7864705582194449241}
   - component: {fileID: 7864705582194449244}
   - component: {fileID: 7864705582194449245}
+  - component: {fileID: 7864705582194449246}
+  - component: {fileID: 7864705582194449247}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -23170,6 +23172,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0c738dfe-c1c7-49bd-9042-43111a421494
     m_ActionName: UI/Pause[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1535ba4f59225184cb5aa320d2963b1f, type: 2}
+        m_TargetAssemblyTypeName: InputEventButton, Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 30217e76-26db-4a73-a0e8-2c2f4cb2d25c
+    m_ActionName: Game/Tag[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game
@@ -23276,6 +23294,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585c80470448a8443a15b649640b2465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7864705582194449246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381079428774429163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834ac6b70dc43d044bc93bc0231551c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distance: 100
+  _mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _tagObject: {fileID: 8397367875841672607, guid: e886182e5a2cdf44ebe01299f6fbfe81,
+    type: 3}
+--- !u!114 &7864705582194449247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381079428774429163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3429829931883e40b6b05b9560731f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputEventButton: {fileID: 11400000, guid: 1535ba4f59225184cb5aa320d2963b1f, type: 2}
+  _callbacks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7864705582194449246}
+        m_TargetAssemblyTypeName: Tag, Assembly-CSharp
+        m_MethodName: DrawTag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7866181333719742903
 GameObject:
   m_ObjectHideFlags: 0
